@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { COLORS } from "@/lib/colors";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
@@ -204,7 +205,8 @@ export default function HomePage() {
               >
                 Join the Waitlist →
               </button>
-              <button
+              <Link
+                href="/how-it-works"
                 style={{
                   fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
                   fontSize: 16,
@@ -216,6 +218,8 @@ export default function HomePage() {
                   padding: "16px 36px",
                   cursor: "pointer",
                   transition: "all 0.3s",
+                  textDecoration: "none",
+                  display: "inline-block",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "rgba(232,220,200,0.5)";
@@ -227,7 +231,7 @@ export default function HomePage() {
                 }}
               >
                 See How It Works
-              </button>
+              </Link>
             </div>
           </Reveal>
 
