@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Serif_4, DM_Sans } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
@@ -17,9 +15,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "GiveRise.ai — Land Conservation Platform",
+  title: "GiveRise.ai — Technology for Land Conservation",
   description:
-    "Connecting Indigenous and community-led land stewardship projects with conservation funders and land trusts.",
+    "GiveRise.ai builds technology infrastructure for land conservation organizations — from AI strategy to data systems to entirely new platforms.",
 };
 
 export default function RootLayout({
@@ -29,10 +27,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${sourceSerif.variable} ${dmSans.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-sans bg-bone text-earth">
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
