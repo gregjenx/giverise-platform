@@ -206,7 +206,7 @@ export default function HomePage() {
                 Join the Waitlist →
               </button>
               <Link
-                href="/how-it-works"
+                href="/groundtrust/how-it-works"
                 style={{
                   fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
                   fontSize: 16,

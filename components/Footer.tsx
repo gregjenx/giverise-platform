@@ -2,10 +2,10 @@ import Link from "next/link";
 import { COLORS } from "@/lib/colors";
 
 const platformLinks = [
-  { href: "/how-it-works", label: "How It Works" },
-  { href: "/for-stewards", label: "For Stewards" },
-  { href: "/for-funders", label: "For Funders" },
-  { href: "/for-land-trusts", label: "For Land Trusts" },
+  { href: "/groundtrust/how-it-works", label: "How It Works" },
+  { href: "/groundtrust/for-stewards", label: "For Stewards" },
+  { href: "/groundtrust/for-funders", label: "For Funders" },
+  { href: "/groundtrust/for-land-trusts", label: "For Land Trusts" },
 ];
 
 const companyLinks = [

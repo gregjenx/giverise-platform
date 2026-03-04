@@ -187,19 +187,19 @@ export default function HowItWorksPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              href="/for-stewards"
+              href="/groundtrust/for-stewards"
               className="font-sans px-5 py-2.5 bg-forest text-bone rounded-full text-sm font-semibold hover:bg-forest-canopy transition-colors"
             >
               For Stewards
             </Link>
             <Link
-              href="/for-funders"
+              href="/groundtrust/for-funders"
               className="font-sans px-5 py-2.5 bg-clay text-bone rounded-full text-sm font-semibold hover:bg-clay-amber transition-colors"
             >
               For Funders
             </Link>
             <Link
-              href="/for-land-trusts"
+              href="/groundtrust/for-land-trusts"
               className="font-sans px-5 py-2.5 border-2 border-forest text-forest rounded-full text-sm font-semibold hover:bg-bone-cream transition-colors"
             >
               For Land Trusts

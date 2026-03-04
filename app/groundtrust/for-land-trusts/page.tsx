@@ -93,7 +93,7 @@ export default function ForLandTrustsPage() {
               Partner With Us →
             </button>
             <Link
-              href="/how-it-works"
+              href="/groundtrust/how-it-works"
               className="font-sans font-medium text-base px-8 py-4 rounded-xl"
               style={{
                 color: "rgba(232,220,200,0.8)",
