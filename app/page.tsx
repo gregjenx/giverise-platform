@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import SiteNav from "@/components/SiteNav";
 
 const C = {
   charcoal: "#1c1f1e",
@@ -88,62 +89,13 @@ function ServiceCard({ number, title, desc, items }: {
 }
 
 export default function HomePage() {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const h = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", h, { passive: true });
-    return () => window.removeEventListener("scroll", h);
-  }, []);
-
   return (
     <div style={{
       background: C.cream, color: C.text,
       fontFamily: "'Instrument Serif', Georgia, serif",
       overflowX: "hidden",
     }}>
-      {/* ─── NAV ─── */}
-      <nav style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        padding: scrollY > 50 ? "14px 0" : "22px 0",
-        background: scrollY > 50 ? "rgba(250,248,244,0.92)" : "transparent",
-        backdropFilter: scrollY > 50 ? "blur(24px)" : "none",
-        borderBottom: scrollY > 50 ? "1px solid rgba(28,31,30,0.06)" : "none",
-        transition: "all 0.4s ease",
-      }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{
-            fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 20,
-            color: C.charcoal, letterSpacing: "-0.03em",
-          }}>
-            GiveRise<span style={{ color: C.clay }}>.ai</span>
-          </span>
-          <div style={{ display: "flex", gap: 36, alignItems: "center" }}>
-            {["Services", "Groundtrust", "About", "Contact"].map((item) => (
-              <a key={item} href="#" style={{
-                fontFamily: "'Outfit', sans-serif", fontSize: 14, fontWeight: 500,
-                color: C.muted, textDecoration: "none", letterSpacing: "0.01em",
-                transition: "color 0.3s",
-              }}
-                onMouseEnter={e => (e.target as HTMLAnchorElement).style.color = C.charcoal}
-                onMouseLeave={e => (e.target as HTMLAnchorElement).style.color = C.muted}
-              >{item}</a>
-            ))}
-            <button style={{
-              fontFamily: "'Outfit', sans-serif", fontSize: 14, fontWeight: 600,
-              background: C.charcoal, color: C.cream,
-              border: "none", borderRadius: 8, padding: "10px 24px",
-              cursor: "pointer", transition: "all 0.3s",
-              letterSpacing: "0.01em",
-            }}
-              onMouseEnter={e => { (e.target as HTMLButtonElement).style.background = C.slate; (e.target as HTMLButtonElement).style.transform = "translateY(-1px)"; }}
-              onMouseLeave={e => { (e.target as HTMLButtonElement).style.background = C.charcoal; (e.target as HTMLButtonElement).style.transform = "translateY(0)"; }}
-            >
-              Work With Us
-            </button>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       {/* ─── HERO ─── */}
       <section style={{

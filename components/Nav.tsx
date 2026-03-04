@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/groundtrust/for-stewards", label: "For Stewards" },
   { href: "/groundtrust/for-funders", label: "For Funders" },
   { href: "/groundtrust/for-land-trusts", label: "For Land Trusts" },
-  { href: "/about", label: "About" },
 ];
 
 export default function Nav() {
