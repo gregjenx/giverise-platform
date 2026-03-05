@@ -9,6 +9,35 @@ import { Counter } from "@/components/Counter";
 export default function HomePage() {
   const [activeAudience, setActiveAudience] = useState(0);
 
+  // Waitlist form state
+  const [wEmail, setWEmail] = useState("");
+  const [wName, setWName] = useState("");
+  const [wRole, setWRole] = useState("");
+  const [wSending, setWSending] = useState(false);
+  const [wSubmitted, setWSubmitted] = useState(false);
+  const [wError, setWError] = useState("");
+
+  async function handleWaitlistSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!wRole) { setWError("Please select your role."); return; }
+    setWSending(true);
+    setWError("");
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: wEmail, name: wName || undefined, role: wRole }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Something went wrong.");
+      setWSubmitted(true);
+    } catch (err) {
+      setWError(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
+      setWSending(false);
+    }
+  }
+
   const audiences = [
     {
       id: "stewards",
@@ -898,99 +927,161 @@ export default function HomePage() {
           </Reveal>
 
           <Reveal delay={300}>
-            <div
-              style={{
-                display: "flex",
-                gap: 12,
-                justifyContent: "center",
-                flexWrap: "wrap",
-                marginBottom: 24,
-              }}
-            >
-              <input
-                type="email"
-                placeholder="your@email.com"
+            {wSubmitted ? (
+              <div
                 style={{
-                  fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-                  fontSize: 16,
-                  background: "rgba(245,240,232,0.08)",
-                  border: "1px solid rgba(245,240,232,0.15)",
-                  borderRadius: 10,
-                  padding: "16px 24px",
-                  width: 320,
-                  color: COLORS.cream,
-                  outline: "none",
-                  transition: "border-color 0.3s",
-                }}
-                onFocus={(e) =>
-                  (e.currentTarget.style.borderColor = COLORS.clay)
-                }
-                onBlur={(e) =>
-                  (e.currentTarget.style.borderColor =
-                    "rgba(245,240,232,0.15)")
-                }
-              />
-              <button
-                style={{
-                  fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-                  fontSize: 16,
-                  fontWeight: 600,
-                  background: COLORS.clay,
-                  color: COLORS.bone,
-                  border: "none",
-                  borderRadius: 10,
-                  padding: "16px 36px",
-                  cursor: "pointer",
-                  transition: "all 0.3s",
-                  boxShadow: "0 4px 24px rgba(196,113,59,0.3)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = COLORS.amber;
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = COLORS.clay;
-                  e.currentTarget.style.transform = "translateY(0)";
+                  background: "rgba(245,240,232,0.06)",
+                  border: "1px solid rgba(196,113,59,0.3)",
+                  borderRadius: 14,
+                  padding: "32px 40px",
+                  maxWidth: 480,
+                  margin: "0 auto",
                 }}
               >
-                Join Waitlist →
-              </button>
-            </div>
-          </Reveal>
-
-          <Reveal delay={400}>
-            <div
-              style={{
-                display: "flex",
-                gap: 24,
-                justifyContent: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              {["I'm a Land Steward", "I'm a Funder", "I'm a Land Trust"].map(
-                (role) => (
-                  <label
-                    key={role}
+                <p style={{
+                  fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                  fontSize: 20,
+                  fontWeight: 600,
+                  color: COLORS.cream,
+                  marginBottom: 8,
+                }}>
+                  You&apos;re on the list.
+                </p>
+                <p style={{
+                  fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                  fontSize: 15,
+                  color: "rgba(232,220,200,0.6)",
+                  lineHeight: 1.6,
+                }}>
+                  We&apos;ll reach out when Groundtrust opens access. Thanks for being part of this.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleWaitlistSubmit}>
+                {/* Name (optional) */}
+                <div style={{ marginBottom: 12, display: "flex", justifyContent: "center" }}>
+                  <input
+                    type="text"
+                    placeholder="Name (optional)"
+                    value={wName}
+                    onChange={(e) => setWName(e.target.value)}
                     style={{
                       fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-                      fontSize: 14,
-                      color: "rgba(232,220,200,0.6)",
-                      cursor: "pointer",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 8,
+                      fontSize: 16,
+                      background: "rgba(245,240,232,0.08)",
+                      border: "1px solid rgba(245,240,232,0.15)",
+                      borderRadius: 10,
+                      padding: "16px 24px",
+                      width: 320,
+                      color: COLORS.cream,
+                      outline: "none",
+                      transition: "border-color 0.3s",
+                    }}
+                    onFocus={(e) => (e.currentTarget.style.borderColor = COLORS.clay)}
+                    onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(245,240,232,0.15)")}
+                  />
+                </div>
+
+                {/* Email + Submit */}
+                <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 24 }}>
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    required
+                    value={wEmail}
+                    onChange={(e) => setWEmail(e.target.value)}
+                    style={{
+                      fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                      fontSize: 16,
+                      background: "rgba(245,240,232,0.08)",
+                      border: "1px solid rgba(245,240,232,0.15)",
+                      borderRadius: 10,
+                      padding: "16px 24px",
+                      width: 320,
+                      color: COLORS.cream,
+                      outline: "none",
+                      transition: "border-color 0.3s",
+                    }}
+                    onFocus={(e) => (e.currentTarget.style.borderColor = COLORS.clay)}
+                    onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(245,240,232,0.15)")}
+                  />
+                  <button
+                    type="submit"
+                    disabled={wSending}
+                    style={{
+                      fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                      fontSize: 16,
+                      fontWeight: 600,
+                      background: wSending ? "rgba(196,113,59,0.5)" : COLORS.clay,
+                      color: COLORS.bone,
+                      border: "none",
+                      borderRadius: 10,
+                      padding: "16px 36px",
+                      cursor: wSending ? "not-allowed" : "pointer",
+                      transition: "all 0.3s",
+                      boxShadow: "0 4px 24px rgba(196,113,59,0.3)",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (wSending) return;
+                      e.currentTarget.style.background = COLORS.amber;
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      if (wSending) return;
+                      e.currentTarget.style.background = COLORS.clay;
+                      e.currentTarget.style.transform = "translateY(0)";
                     }}
                   >
-                    <input
-                      type="radio"
-                      name="role"
-                      style={{ accentColor: COLORS.clay }}
-                    />
-                    {role}
-                  </label>
-                )
-              )}
-            </div>
+                    {wSending ? "Joining…" : "Join Waitlist →"}
+                  </button>
+                </div>
+
+                {/* Role selection */}
+                <div style={{ display: "flex", gap: 24, justifyContent: "center", flexWrap: "wrap", marginBottom: wError ? 16 : 0 }}>
+                  {[
+                    { label: "I'm a Land Steward", value: "steward" },
+                    { label: "I'm a Funder", value: "funder" },
+                    { label: "I'm a Land Trust", value: "land_trust" },
+                  ].map((r) => (
+                    <label
+                      key={r.value}
+                      style={{
+                        fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                        fontSize: 14,
+                        color: wRole === r.value ? COLORS.cream : "rgba(232,220,200,0.6)",
+                        cursor: "pointer",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 8,
+                        transition: "color 0.2s",
+                      }}
+                    >
+                      <input
+                        type="radio"
+                        name="role"
+                        value={r.value}
+                        checked={wRole === r.value}
+                        onChange={() => { setWRole(r.value); setWError(""); }}
+                        style={{ accentColor: COLORS.clay }}
+                      />
+                      {r.label}
+                    </label>
+                  ))}
+                </div>
+
+                {wError && (
+                  <p style={{
+                    fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                    fontSize: 14,
+                    color: "#f4a57a",
+                    marginTop: 16,
+                    textAlign: "center",
+                  }}>
+                    {wError}
+                  </p>
+                )}
+              </form>
+            )}
           </Reveal>
         </div>
       </section>
