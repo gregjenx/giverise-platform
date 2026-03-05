@@ -18,7 +18,7 @@ export function Counter({ end, suffix = "", duration = 2000 }: CounterProps) {
       ([entry]) => {
         if (entry.isIntersecting) setStarted(true);
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();

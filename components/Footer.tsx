@@ -10,9 +10,9 @@ const platformLinks = [
 
 const companyLinks = [
   { href: "/about", label: "About" },
-  { href: "#", label: "Contact" },
-  { href: "#", label: "Privacy" },
-  { href: "#", label: "Terms" },
+  { href: "/contact", label: "Contact" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
 ];
 
 export default function Footer() {
@@ -35,16 +35,17 @@ export default function Footer() {
       >
         {/* Brand */}
         <div style={{ gridColumn: "span 2" }}>
-          <div
-            style={{
-              fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-              fontWeight: 700,
-              fontSize: 20,
-              color: COLORS.cream,
-              marginBottom: 14,
-            }}
-          >
-            GiveRise<span style={{ color: COLORS.clay }}>.ai</span>
+          <div style={{ marginBottom: 14 }}>
+            <div style={{ lineHeight: 1, marginBottom: 5 }}>
+              <span style={{ fontFamily: "var(--font-dm-sans), system-ui, sans-serif", fontWeight: 400, fontSize: 20, color: COLORS.cream, letterSpacing: "-0.025em" }}>Ground</span>
+              <span style={{ fontFamily: "var(--font-dm-sans), system-ui, sans-serif", fontWeight: 700, fontSize: 20, color: COLORS.cream, letterSpacing: "-0.025em" }}>trust</span>
+            </div>
+            <div style={{ fontFamily: "var(--font-dm-sans), system-ui, sans-serif", fontSize: 11, color: "rgba(232,220,200,0.4)", letterSpacing: "0.01em" }}>
+              by{" "}
+              <Link href="/" style={{ color: COLORS.clay, textDecoration: "none" }}>
+                GiveRise.ai
+              </Link>
+            </div>
           </div>
           <p
             style={{
@@ -158,7 +159,7 @@ export default function Footer() {
             color: "rgba(232,220,200,0.25)",
           }}
         >
-          © {new Date().getFullYear()} GiveRise.ai. All rights reserved.
+          © {new Date().getFullYear()} Groundtrust by GiveRise.ai. All rights reserved.
         </p>
       </div>
     </footer>

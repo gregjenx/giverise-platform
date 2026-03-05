@@ -139,19 +139,20 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
-          <button
+          <Link
+            href="/groundtrust#waitlist"
             style={{
               fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
               fontSize: 14,
               fontWeight: 600,
               background: COLORS.clay,
               color: COLORS.bone,
-              border: "none",
               borderRadius: 8,
               padding: "10px 22px",
-              cursor: "pointer",
               letterSpacing: "0.01em",
               transition: "all 0.3s",
+              textDecoration: "none",
+              display: "inline-block",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = COLORS.amber;
@@ -163,7 +164,7 @@ export default function Nav() {
             }}
           >
             Join the Waitlist
-          </button>
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}

@@ -195,7 +195,7 @@ export default function HomePage() {
                 fontWeight: 300,
               }}
             >
-              GiveRise connects Indigenous and community-led land stewardship
+              Groundtrust connects Indigenous and community-led land stewardship
               projects directly to the funders who want to support them — with
               radical transparency, zero bureaucratic overhead, and tools built
               for the field.
@@ -204,36 +204,35 @@ export default function HomePage() {
 
           <Reveal delay={450}>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <button
+              <a
+                href="#waitlist"
                 style={{
                   fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
                   fontSize: 16,
                   fontWeight: 600,
                   background: COLORS.clay,
                   color: COLORS.bone,
-                  border: "none",
                   borderRadius: 10,
                   padding: "16px 36px",
-                  cursor: "pointer",
                   letterSpacing: "0.01em",
                   boxShadow: "0 4px 24px rgba(196,113,59,0.3)",
                   transition: "all 0.3s",
+                  textDecoration: "none",
+                  display: "inline-block",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = COLORS.amber;
                   e.currentTarget.style.transform = "translateY(-2px)";
-                  e.currentTarget.style.boxShadow =
-                    "0 8px 32px rgba(196,113,59,0.4)";
+                  e.currentTarget.style.boxShadow = "0 8px 32px rgba(196,113,59,0.4)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = COLORS.clay;
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow =
-                    "0 4px 24px rgba(196,113,59,0.3)";
+                  e.currentTarget.style.boxShadow = "0 4px 24px rgba(196,113,59,0.3)";
                 }}
               >
                 Join the Waitlist →
-              </button>
+              </a>
               <Link
                 href="/groundtrust/how-it-works"
                 style={{
@@ -495,7 +494,7 @@ export default function HomePage() {
                   marginBottom: 24,
                 }}
               >
-                How GiveRise Works
+                How Groundtrust Works
               </div>
               <h2
                 style={{
@@ -698,18 +697,20 @@ export default function HomePage() {
                 >
                   {audiences[activeAudience].description}
                 </p>
-                <button
+                <a
+                  href="#waitlist"
                   style={{
                     fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
                     fontSize: 16,
                     fontWeight: 600,
                     background: COLORS.clay,
                     color: COLORS.bone,
-                    border: "none",
                     borderRadius: 10,
                     padding: "14px 32px",
                     cursor: "pointer",
                     transition: "all 0.3s",
+                    textDecoration: "none",
+                    display: "inline-block",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = COLORS.amber;
@@ -719,7 +720,7 @@ export default function HomePage() {
                   }}
                 >
                   {audiences[activeAudience].cta} →
-                </button>
+                </a>
               </div>
             </Reveal>
 
@@ -843,7 +844,7 @@ export default function HomePage() {
                       marginBottom: 16,
                     }}
                   >
-                    What GiveRise adds
+                    What Groundtrust adds
                   </h4>
                   <p style={{ fontSize: 16, lineHeight: 1.7, color: COLORS.earth }}>
                     The connective tissue. A technology-enabled coordination
@@ -860,6 +861,7 @@ export default function HomePage() {
 
       {/* ─── CTA / WAITLIST ─── */}
       <section
+        id="waitlist"
         style={{
           padding: "140px 24px",
           background: `linear-gradient(165deg, ${COLORS.deep} 0%, ${COLORS.forest} 50%, ${COLORS.canopy} 100%)`,
