@@ -686,15 +686,20 @@ export default function HomePage() {
             </p>
           </div>
           <div style={{ display: "flex", gap: 28 }}>
-            {["Services", "Groundtrust", "About", "Contact", "Privacy"].map((link) => (
-              <a key={link} href="#" style={{
+            {[
+              { label: "Services", href: "/services" },
+              { label: "Groundtrust", href: "/groundtrust" },
+              { label: "About", href: "/about" },
+              { label: "Contact", href: "/contact" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} style={{
                 fontFamily: "'Outfit', sans-serif", fontSize: 13,
                 color: "rgba(248,246,242,0.35)", textDecoration: "none",
                 transition: "color 0.3s",
               }}
-                onMouseEnter={e => (e.target as HTMLAnchorElement).style.color = C.clay}
-                onMouseLeave={e => (e.target as HTMLAnchorElement).style.color = "rgba(248,246,242,0.35)"}
-              >{link}</a>
+                onMouseEnter={e => (e.currentTarget.style.color = C.clay)}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(248,246,242,0.35)")}
+              >{link.label}</Link>
             ))}
           </div>
           <p style={{

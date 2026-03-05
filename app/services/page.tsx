@@ -574,8 +574,8 @@ export default function ServicesPage() {
             {[
               { label: "Services", href: "/services" },
               { label: "Groundtrust", href: "/groundtrust" },
-              { label: "Patterns", href: "/patterns" },
               { label: "About", href: "/about" },
+              { label: "Contact", href: "/contact" },
             ].map((link) => (
               <Link
                 key={link.href}
