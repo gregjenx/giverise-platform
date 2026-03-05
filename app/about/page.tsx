@@ -154,7 +154,7 @@ export default function AboutPage() {
                 marginBottom: 24,
               }}
             >
-              Conservation doesn't have a funding problem. It has a routing
+              Conservation doesn&apos;t have a funding problem. It has a routing
               problem. There is money moving toward land protection — but it
               pools in places that are easy to reach and drains away from the
               communities doing the most essential work. The organizations
@@ -188,7 +188,7 @@ export default function AboutPage() {
             >
               We came to this work after years of watching the same failure
               mode repeat: organizations with extraordinary field knowledge and
-              community trust, limited by systems that couldn't keep pace.
+              community trust, limited by systems that couldn&apos;t keep pace.
               Reporting that consumed weeks. Coordination that happened through
               email threads and spreadsheets. The gap between what these
               organizations knew and what they could demonstrate was a
@@ -352,10 +352,10 @@ export default function AboutPage() {
                 marginBottom: 64,
               }}
             >
-              Conservation is not one sector — it's an interconnected web of
+              Conservation is not one sector — it&apos;s an interconnected web of
               organizations with different roles, resources, and relationships.
               GiveRise works across that entire ecosystem without allegiance to
-              any one node within it. We don't advocate for any particular
+              any one node within it. We don&apos;t advocate for any particular
               outcome except a better-functioning system.
             </p>
           </Reveal>
@@ -570,7 +570,7 @@ export default function AboutPage() {
               >
                 Additional team members and advisors coming soon. GiveRise is a
                 small, focused team — we grow carefully, adding people whose
-                depth in the sector matches the complexity of the problems we're
+                depth in the sector matches the complexity of the problems we&apos;re
                 solving.
               </p>
             </div>
@@ -611,7 +611,7 @@ export default function AboutPage() {
               }}
             >
               Whether you have a specific project in mind or are still mapping
-              the problem, we're happy to talk through what's possible.
+              the problem, we&apos;re happy to talk through what&apos;s possible.
             </p>
             <Link
               href="/#contact"
