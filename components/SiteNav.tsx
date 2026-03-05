@@ -16,7 +16,7 @@ const navLinks = [
   { href: "/groundtrust", label: "Groundtrust" },
   { href: "/patterns", label: "Patterns" },
   { href: "/about", label: "About" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function SiteNav() {

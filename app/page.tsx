@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 
 const C = {
@@ -148,18 +149,19 @@ export default function HomePage() {
 
             <Reveal delay={360}>
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                <button style={{
+                <Link href="/contact" style={{
                   fontFamily: "'Outfit', sans-serif", fontSize: 16, fontWeight: 600,
                   background: C.charcoal, color: C.cream,
-                  border: "none", borderRadius: 10, padding: "16px 36px",
+                  borderRadius: 10, padding: "16px 36px",
                   cursor: "pointer", transition: "all 0.3s",
                   boxShadow: "0 2px 16px rgba(28,31,30,0.12)",
+                  textDecoration: "none", display: "inline-block",
                 }}
-                  onMouseEnter={e => { (e.target as HTMLButtonElement).style.background = C.slate; (e.target as HTMLButtonElement).style.transform = "translateY(-2px)"; (e.target as HTMLButtonElement).style.boxShadow = "0 6px 24px rgba(28,31,30,0.18)"; }}
-                  onMouseLeave={e => { (e.target as HTMLButtonElement).style.background = C.charcoal; (e.target as HTMLButtonElement).style.transform = "translateY(0)"; (e.target as HTMLButtonElement).style.boxShadow = "0 2px 16px rgba(28,31,30,0.12)"; }}
+                  onMouseEnter={e => { e.currentTarget.style.background = C.slate; e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 24px rgba(28,31,30,0.18)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = C.charcoal; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 2px 16px rgba(28,31,30,0.12)"; }}
                 >
                   Start a Conversation
-                </button>
+                </Link>
                 <button style={{
                   fontFamily: "'Outfit', sans-serif", fontSize: 16, fontWeight: 500,
                   background: "transparent", color: C.charcoal,
@@ -630,18 +632,19 @@ export default function HomePage() {
 
           <Reveal delay={240}>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <button style={{
+              <Link href="/contact" style={{
                 fontFamily: "'Outfit', sans-serif", fontSize: 16, fontWeight: 600,
                 background: C.clay, color: C.cream,
-                border: "none", borderRadius: 10, padding: "16px 40px",
+                borderRadius: 10, padding: "16px 40px",
                 cursor: "pointer", transition: "all 0.3s",
                 boxShadow: "0 4px 24px rgba(196,113,59,0.25)",
+                textDecoration: "none", display: "inline-block",
               }}
-                onMouseEnter={e => { (e.target as HTMLButtonElement).style.background = C.amber; (e.target as HTMLButtonElement).style.transform = "translateY(-2px)"; }}
-                onMouseLeave={e => { (e.target as HTMLButtonElement).style.background = C.clay; (e.target as HTMLButtonElement).style.transform = "translateY(0)"; }}
+                onMouseEnter={e => { e.currentTarget.style.background = C.amber; e.currentTarget.style.transform = "translateY(-2px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.background = C.clay; e.currentTarget.style.transform = "translateY(0)"; }}
               >
                 Start a Conversation →
-              </button>
+              </Link>
               <button style={{
                 fontFamily: "'Outfit', sans-serif", fontSize: 16, fontWeight: 500,
                 background: "transparent", color: "rgba(248,246,242,0.7)",

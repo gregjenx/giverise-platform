@@ -494,7 +494,7 @@ export default function ServicesPage() {
           <Reveal delay={240}>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
               <Link
-                href="/#contact"
+                href="/contact"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
                   fontSize: 16, fontWeight: 600,

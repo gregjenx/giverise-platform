@@ -614,7 +614,7 @@ export default function AboutPage() {
               the problem, we&apos;re happy to talk through what&apos;s possible.
             </p>
             <Link
-              href="/#contact"
+              href="/contact"
               style={{
                 display: "inline-block",
                 fontFamily: "'Outfit', sans-serif",
