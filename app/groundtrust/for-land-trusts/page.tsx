@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "For Land Trusts",
   description:
-    "Partner with GiveRise to extend your conservation mission through Indigenous land stewardship — at scale, without scale-equivalent overhead.",
+    "Partner with Groundtrust to extend your conservation mission through Indigenous land stewardship — at scale, without scale-equivalent overhead.",
 };
 
 const roles = [
@@ -14,7 +14,7 @@ const roles = [
   },
   {
     title: "Long-term stewardship oversight",
-    desc: "Maintain ongoing oversight of funded projects to ensure conservation outcomes are achieved and documented. GiveRise handles the reporting infrastructure.",
+    desc: "Maintain ongoing oversight of funded projects to ensure conservation outcomes are achieved and documented. Groundtrust handles the reporting infrastructure.",
   },
   {
     title: "Relationship facilitator",
@@ -26,7 +26,7 @@ const benefits = [
   {
     icon: "📐",
     title: "Scale without overhead",
-    desc: "Manage relationships with dozens of stewardship projects using GiveRise's coordination infrastructure — not more staff.",
+    desc: "Manage relationships with dozens of stewardship projects using Groundtrust's coordination infrastructure — not more staff.",
   },
   {
     icon: "🔄",
@@ -46,7 +46,7 @@ const benefits = [
   {
     icon: "🧭",
     title: "Interoperability",
-    desc: "GiveRise integrates with existing conservation databases, GIS systems, and CRM tools your team already uses.",
+    desc: "Groundtrust integrates with existing conservation databases, GIS systems, and CRM tools your team already uses.",
   },
   {
     icon: "🤲",
@@ -82,16 +82,17 @@ export default function ForLandTrustsPage() {
             style={{ color: "rgba(232,220,200,0.75)" }}
           >
             You already connect stewards, funders, and conservation outcomes.
-            GiveRise gives you the infrastructure to do that work at ten times
+            Groundtrust gives you the infrastructure to do that work at ten times
             the scale — without ten times the staff.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button
+            <a
+              href="/groundtrust#waitlist"
               className="font-sans font-semibold text-base px-8 py-4 rounded-xl text-bone"
               style={{ background: "#c4713b", boxShadow: "0 4px 24px rgba(196,113,59,0.3)" }}
             >
               Partner With Us →
-            </button>
+            </a>
             <Link
               href="/groundtrust/how-it-works"
               className="font-sans font-medium text-base px-8 py-4 rounded-xl"
@@ -113,7 +114,7 @@ export default function ForLandTrustsPage() {
             Your role in the platform
           </h2>
           <p className="font-sans text-stone mb-12 max-w-xl">
-            Land trusts are partners, not gatekeepers. GiveRise is built to
+            Land trusts are partners, not gatekeepers. Groundtrust is built to
             amplify your expertise, not replace your judgment.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
@@ -149,7 +150,7 @@ export default function ForLandTrustsPage() {
               Verifier, not gatekeeper.
             </h2>
             <p className="font-sans text-stone leading-relaxed text-base mb-6">
-              GiveRise is built on a clear principle: land trusts validate and
+              Groundtrust is built on a clear principle: land trusts validate and
               support stewardship work, but they do not control which projects
               can participate. Your role is to confirm legitimacy and provide
               oversight — not to approve or reject community initiatives.
@@ -200,12 +201,13 @@ export default function ForLandTrustsPage() {
             Help shape how the platform works — and get first access when we
             launch.
           </p>
-          <button
+          <a
+            href="/groundtrust#waitlist"
             className="font-sans font-semibold text-base px-8 py-4 rounded-xl text-bone"
             style={{ background: "#c4713b" }}
           >
             Partner With Us →
-          </button>
+          </a>
           <p
             className="font-sans text-xs mt-4"
             style={{ color: "rgba(232,220,200,0.35)" }}

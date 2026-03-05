@@ -221,8 +221,11 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
-          <button
+          <Link
+            href="/groundtrust#waitlist"
+            onClick={() => setMobileOpen(false)}
             style={{
+              display: "block",
               marginTop: 20,
               width: "100%",
               fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
@@ -230,14 +233,14 @@ export default function Nav() {
               fontWeight: 600,
               background: COLORS.clay,
               color: COLORS.bone,
-              border: "none",
               borderRadius: 8,
               padding: "14px 22px",
-              cursor: "pointer",
+              textDecoration: "none",
+              textAlign: "center",
             }}
           >
             Join the Waitlist
-          </button>
+          </Link>
         </div>
       )}
     </header>

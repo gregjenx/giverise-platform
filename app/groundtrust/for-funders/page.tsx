@@ -31,7 +31,7 @@ const benefits = [
   {
     icon: "📈",
     title: "Ecological intelligence",
-    desc: "GiveRise aggregates satellite, sensor, and community-reported data to give you an honest picture of conservation outcomes.",
+    desc: "Groundtrust aggregates satellite, sensor, and community-reported data to give you an honest picture of conservation outcomes.",
   },
   {
     icon: "🏛️",
@@ -53,7 +53,7 @@ const differences = [
     dark: true,
   },
   {
-    label: "GiveRise",
+    label: "Groundtrust",
     points: [
       "Projects listed continuously; fund when ready",
       "Direct relationship with the stewards you fund",
@@ -96,12 +96,13 @@ export default function ForFundersPage() {
             relationships that traditional philanthropy can&apos;t offer.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button
+            <a
+              href="/groundtrust#waitlist"
               className="font-sans font-semibold text-base px-8 py-4 rounded-xl text-bone transition-all"
               style={{ background: "#c4713b", boxShadow: "0 4px 24px rgba(196,113,59,0.3)" }}
             >
               Explore Projects →
-            </button>
+            </a>
             <Link
               href="/groundtrust/how-it-works"
               className="font-sans font-medium text-base px-8 py-4 rounded-xl transition-all"
@@ -200,15 +201,16 @@ export default function ForFundersPage() {
             Join as a funder partner
           </h2>
           <p className="font-sans text-stone mb-8">
-            GiveRise launches in 2026. Get early access to the project pipeline
+            Groundtrust launches in 2026. Get early access to the project pipeline
             and help shape the platform.
           </p>
-          <button
+          <a
+            href="/groundtrust#waitlist"
             className="font-sans font-semibold text-base px-8 py-4 rounded-xl text-bone"
             style={{ background: "#c4713b" }}
           >
             Join the Waitlist →
-          </button>
+          </a>
           <p className="font-sans text-xs text-stone/60 mt-4">
             We&apos;re accepting a limited cohort of founding funders.
           </p>

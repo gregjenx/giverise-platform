@@ -36,7 +36,7 @@ const benefits = [
   {
     icon: "💸",
     title: "Free to list, always",
-    desc: "GiveRise never charges stewards for access. Our model is funded by the funders and land trusts we serve.",
+    desc: "Groundtrust never charges stewards for access. Our model is funded by the funders and land trusts we serve.",
   },
 ];
 
@@ -49,7 +49,7 @@ const steps = [
   {
     num: "2",
     title: "Get verified",
-    desc: "A land trust partner reviews your project. GiveRise provides supporting data from satellite monitoring. This usually takes 2–4 weeks.",
+    desc: "A land trust partner reviews your project. Groundtrust provides supporting data from satellite monitoring. This usually takes 2–4 weeks.",
   },
   {
     num: "3",
@@ -59,7 +59,7 @@ const steps = [
   {
     num: "4",
     title: "Build a relationship",
-    desc: "GiveRise facilitates introductions on your timeline. Funding follows relationships — not the other way around.",
+    desc: "Groundtrust facilitates introductions on your timeline. Funding follows relationships — not the other way around.",
   },
 ];
 
@@ -89,17 +89,18 @@ export default function ForStewardsPage() {
             className="font-sans text-lg leading-relaxed mb-10 max-w-xl"
             style={{ color: "rgba(232,220,200,0.75)" }}
           >
-            GiveRise makes it possible for Indigenous and community-led land
+            Groundtrust makes it possible for Indigenous and community-led land
             stewardship projects to reach aligned funders — without sacrificing
             sovereignty, data, or your team&apos;s time.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button
+            <a
+              href="/groundtrust#waitlist"
               className="font-sans font-semibold text-base px-8 py-4 rounded-xl text-bone transition-all"
               style={{ background: "#c4713b", boxShadow: "0 4px 24px rgba(196,113,59,0.3)" }}
             >
               Join the Waitlist →
-            </button>
+            </a>
             <Link
               href="/groundtrust/how-it-works"
               className="font-sans font-medium text-base px-8 py-4 rounded-xl transition-all"
@@ -121,7 +122,7 @@ export default function ForStewardsPage() {
             What stewards get
           </h2>
           <p className="font-sans text-stone mb-12 max-w-lg">
-            GiveRise is built around your needs — not the other way around.
+            Groundtrust is built around your needs — not the other way around.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b) => (
@@ -186,11 +187,11 @@ export default function ForStewardsPage() {
         <div className="max-w-3xl mx-auto">
           <div className="border-l-4 border-clay pl-8">
             <p className="font-serif text-xl md:text-2xl font-light text-earth leading-relaxed italic mb-4">
-              &ldquo;GiveRise will never require you to share more than you want
+              &ldquo;Groundtrust will never require you to share more than you want
               to. Indigenous data sovereignty is not a feature — it is the
               foundation.&rdquo;
             </p>
-            <p className="font-sans text-sm text-stone">The GiveRise Charter</p>
+            <p className="font-sans text-sm text-stone">The Groundtrust Charter</p>
           </div>
         </div>
       </section>
@@ -202,15 +203,16 @@ export default function ForStewardsPage() {
             Ready to list your project?
           </h2>
           <p className="font-sans text-stone mb-8">
-            GiveRise launches in 2026. Join the waitlist and be among the first
+            Groundtrust launches in 2026. Join the waitlist and be among the first
             stewards on the platform.
           </p>
-          <button
+          <a
+            href="/groundtrust#waitlist"
             className="font-sans font-semibold text-base px-8 py-4 rounded-xl text-bone transition-all"
             style={{ background: "#c4713b" }}
           >
             Join the Waitlist →
-          </button>
+          </a>
           <p className="font-sans text-xs text-stone/60 mt-4">
             Free for land stewards. Always.
           </p>
