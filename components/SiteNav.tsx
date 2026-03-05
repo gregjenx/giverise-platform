@@ -12,7 +12,7 @@ const C = {
 };
 
 const navLinks = [
-  { href: "/#services", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "/groundtrust", label: "Groundtrust" },
   { href: "/patterns", label: "Patterns" },
   { href: "/about", label: "About" },
