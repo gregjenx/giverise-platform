@@ -95,19 +95,20 @@ export default function SiteNav() {
               {link.label}
             </Link>
           ))}
-          <button
+          <Link
+            href="/contact"
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontSize: 14,
               fontWeight: 600,
               background: C.charcoal,
               color: C.cream,
-              border: "none",
               borderRadius: 8,
               padding: "10px 24px",
-              cursor: "pointer",
               letterSpacing: "0.01em",
               transition: "all 0.3s",
+              textDecoration: "none",
+              display: "inline-block",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = C.slate;
@@ -119,7 +120,7 @@ export default function SiteNav() {
             }}
           >
             Work With Us
-          </button>
+          </Link>
         </div>
       </div>
     </nav>
