@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | GiveRise.ai",
+  title: "About",
   description:
     "GiveRise is building conservation's missing coordination layer — connecting Indigenous land stewardship with the funders and land trusts who can amplify their work.",
 };

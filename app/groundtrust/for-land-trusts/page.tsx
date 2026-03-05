@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "For Land Trusts | GiveRise.ai",
+  title: "For Land Trusts",
   description:
     "Partner with GiveRise to extend your conservation mission through Indigenous land stewardship — at scale, without scale-equivalent overhead.",
 };

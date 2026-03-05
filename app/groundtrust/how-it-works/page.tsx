@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How It Works | GiveRise.ai",
+  title: "How It Works",
   description:
     "A transparent, trust-centered process from first connection to lasting conservation outcomes.",
 };

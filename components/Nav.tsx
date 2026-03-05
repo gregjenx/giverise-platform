@@ -31,12 +31,12 @@ export default function Nav() {
         left: 0,
         right: 0,
         zIndex: 100,
-        padding: scrolled ? "12px 0" : "20px 0",
-        background: scrolled ? "rgba(15, 26, 21, 0.95)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
+        padding: scrolled ? "10px 0" : "18px 0",
+        background: scrolled ? "rgba(250,247,242,0.96)" : "transparent",
+        backdropFilter: scrolled ? "blur(24px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(24px)" : "none",
         transition: "all 0.4s ease",
-        borderBottom: scrolled ? `1px solid rgba(196, 113, 59, 0.15)` : "none",
+        borderBottom: scrolled ? "1px solid rgba(45,74,62,0.1)" : "none",
       }}
     >
       <div
@@ -49,39 +49,66 @@ export default function Nav() {
           alignItems: "center",
         }}
       >
-        {/* Logo */}
+        {/* Wordmark */}
         <Link
-          href="/"
-          style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}
+          href="/groundtrust"
+          style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: 2 }}
         >
+          <div style={{ lineHeight: 1 }}>
+            <span
+              style={{
+                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                fontWeight: 400,
+                fontSize: 21,
+                color: scrolled ? "#2d4a3e" : COLORS.cream,
+                letterSpacing: "-0.025em",
+                transition: "color 0.4s ease",
+              }}
+            >
+              Ground
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                fontWeight: 700,
+                fontSize: 21,
+                color: scrolled ? "#2d4a3e" : COLORS.cream,
+                letterSpacing: "-0.025em",
+                transition: "color 0.4s ease",
+              }}
+            >
+              trust
+            </span>
+          </div>
           <div
             style={{
-              width: 36,
-              height: 36,
-              borderRadius: "50%",
-              background: `linear-gradient(135deg, ${COLORS.canopy}, ${COLORS.clay})`,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 18,
-              fontWeight: 700,
-              color: COLORS.bone,
               fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+              fontSize: 11,
+              color: scrolled ? "#9a948a" : "rgba(232,220,200,0.4)",
+              letterSpacing: "0.01em",
+              transition: "color 0.4s ease",
+              lineHeight: 1,
             }}
           >
-            G
+            by{" "}
+            <a
+              href="/"
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                color: scrolled ? COLORS.clay : "rgba(232,220,200,0.55)",
+                textDecoration: "none",
+                transition: "color 0.3s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = COLORS.amber)}
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = scrolled
+                  ? COLORS.clay
+                  : "rgba(232,220,200,0.55)")
+              }
+            >
+              GiveRise.ai
+            </a>
           </div>
-          <span
-            style={{
-              fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-              fontWeight: 700,
-              fontSize: 20,
-              color: scrolled ? COLORS.cream : COLORS.bone,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            GiveRise<span style={{ color: COLORS.clay }}>.ai</span>
-          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -97,7 +124,7 @@ export default function Nav() {
                 fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
                 fontSize: 14,
                 fontWeight: 500,
-                color: scrolled ? COLORS.sand : "rgba(245,240,232,0.8)",
+                color: scrolled ? "#3d6b5a" : "rgba(245,240,232,0.8)",
                 textDecoration: "none",
                 letterSpacing: "0.01em",
                 transition: "color 0.3s",
@@ -105,7 +132,7 @@ export default function Nav() {
               onMouseEnter={(e) => (e.currentTarget.style.color = COLORS.clay)}
               onMouseLeave={(e) =>
                 (e.currentTarget.style.color = scrolled
-                  ? COLORS.sand
+                  ? "#3d6b5a"
                   : "rgba(245,240,232,0.8)")
               }
             >
@@ -147,8 +174,9 @@ export default function Nav() {
             background: "transparent",
             border: "none",
             cursor: "pointer",
-            color: COLORS.cream,
+            color: scrolled ? "#2d4a3e" : COLORS.cream,
             padding: 8,
+            transition: "color 0.4s",
           }}
           aria-label="Toggle mobile menu"
         >
@@ -168,8 +196,8 @@ export default function Nav() {
       {mobileOpen && (
         <div
           style={{
-            background: COLORS.deep,
-            borderTop: `1px solid rgba(196,113,59,0.15)`,
+            background: scrolled ? "rgba(250,247,242,0.98)" : COLORS.deep,
+            borderTop: `1px solid ${scrolled ? "rgba(45,74,62,0.1)" : "rgba(196,113,59,0.15)"}`,
             padding: "20px 24px 28px",
           }}
         >
@@ -183,10 +211,10 @@ export default function Nav() {
                 fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
                 fontSize: 16,
                 fontWeight: 500,
-                color: COLORS.cream,
+                color: scrolled ? "#2d4a3e" : COLORS.cream,
                 textDecoration: "none",
                 padding: "14px 0",
-                borderBottom: `1px solid rgba(245,240,232,0.06)`,
+                borderBottom: `1px solid ${scrolled ? "rgba(45,74,62,0.08)" : "rgba(245,240,232,0.06)"}`,
               }}
             >
               {link.label}
