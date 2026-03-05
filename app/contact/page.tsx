@@ -90,6 +90,8 @@ export default function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -97,9 +99,26 @@ export default function ContactPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Something went wrong.");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -307,29 +326,44 @@ export default function ContactPage() {
                 <div>
                   <button
                     type="submit"
+                    disabled={sending}
                     style={{
                       fontFamily: "'Outfit', sans-serif",
                       fontSize: 16,
                       fontWeight: 600,
-                      background: C.charcoal,
+                      background: sending ? C.light : C.charcoal,
                       color: C.cream,
                       border: "none",
                       borderRadius: 10,
                       padding: "16px 40px",
-                      cursor: "pointer",
+                      cursor: sending ? "not-allowed" : "pointer",
                       transition: "all 0.3s",
                     }}
                     onMouseEnter={(e) => {
+                      if (sending) return;
                       e.currentTarget.style.background = C.slate;
                       e.currentTarget.style.transform = "translateY(-1px)";
                     }}
                     onMouseLeave={(e) => {
+                      if (sending) return;
                       e.currentTarget.style.background = C.charcoal;
                       e.currentTarget.style.transform = "translateY(0)";
                     }}
                   >
-                    Send Message
+                    {sending ? "Sending…" : "Send Message"}
                   </button>
+                  {error && (
+                    <p
+                      style={{
+                        fontFamily: "'Outfit', sans-serif",
+                        fontSize: 14,
+                        color: "#b94040",
+                        marginTop: 16,
+                      }}
+                    >
+                      {error}
+                    </p>
+                  )}
                 </div>
               </form>
             )}
