@@ -26,7 +26,7 @@ const steps = [
     tag: "Land Trusts",
     title: "A land trust partner verifies the project",
     description:
-      "A vetted, accredited land trust reviews the project's boundaries, legal standing, and conservation value. GiveRise supplements this with satellite-based monitoring data. This step provides funders with confidence — without extracting authority from the community doing the work.",
+      "A vetted, accredited land trust reviews the project's boundaries, legal standing, and conservation value. Groundtrust supplements this with satellite-based monitoring data. This step provides funders with confidence — without extracting authority from the community doing the work.",
     details: [
       "Land trusts confirm, not control",
       "Satellite + community verification combined",
@@ -50,9 +50,9 @@ const steps = [
   {
     number: "04",
     tag: "Platform",
-    title: "GiveRise facilitates the introduction",
+    title: "Groundtrust facilitates the introduction",
     description:
-      "When a funder expresses interest, GiveRise coordinates a warm introduction on the steward's terms. Stewards choose whether to engage, how much to share, and when. The relationship develops at a pace the community sets — not the funder's timeline.",
+      "When a funder expresses interest, Groundtrust coordinates a warm introduction on the steward's terms. Stewards choose whether to engage, how much to share, and when. The relationship develops at a pace the community sets — not the funder's timeline.",
     details: [
       "Steward-controlled pacing",
       "Structured conversation guides",
@@ -65,7 +65,7 @@ const steps = [
     tag: "All Parties",
     title: "Funding flows, stewardship continues",
     description:
-      "GiveRise streamlines grant administration, donor reporting, and impact documentation — cutting the administrative burden on stewardship teams. The land trust maintains long-term oversight to ensure conservation outcomes are honored.",
+      "Groundtrust streamlines grant administration, donor reporting, and impact documentation — cutting the administrative burden on stewardship teams. The land trust maintains long-term oversight to ensure conservation outcomes are honored.",
     details: [
       "Streamlined grant reporting",
       "Real-time impact dashboards",
@@ -78,7 +78,7 @@ const steps = [
 const principles = [
   {
     title: "Sovereignty First",
-    body: "Indigenous communities determine what they share, with whom, and when. GiveRise never extracts data or pressures stewards into disclosure.",
+    body: "Indigenous communities determine what they share, with whom, and when. Groundtrust never extracts data or pressures stewards into disclosure.",
   },
   {
     title: "Verified, Not Gatekept",
@@ -86,7 +86,7 @@ const principles = [
   },
   {
     title: "Relationships Over Transactions",
-    body: "Funding is a byproduct of trust. GiveRise optimizes for long-term alignment and relationship-building, not the speed of grant disbursement.",
+    body: "Funding is a byproduct of trust. Groundtrust optimizes for long-term alignment and relationship-building, not the speed of grant disbursement.",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function HowItWorksPage() {
             Process Overview
           </p>
           <h1 className="font-serif text-4xl md:text-5xl font-light text-bone leading-tight mb-5 tracking-tight">
-            How GiveRise Works
+            How Groundtrust Works
           </h1>
           <p className="font-sans text-lg text-bone/70 leading-relaxed max-w-xl mx-auto">
             A transparent, trust-centered process from first connection to

@@ -68,7 +68,7 @@ export default function Footer() {
               maxWidth: 300,
             }}
           >
-            GiveRise honors the sovereignty of Indigenous peoples and their inherent right to steward their ancestral lands.
+            Groundtrust honors the sovereignty of Indigenous peoples and their inherent right to steward their ancestral lands.
           </p>
         </div>
 

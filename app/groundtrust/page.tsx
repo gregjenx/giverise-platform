@@ -44,7 +44,7 @@ export default function HomePage() {
       label: "Land Stewards",
       title: "Your work deserves funding without the red tape.",
       description:
-        "List your project in minutes, not months. GiveRise verifies your stewardship work, surfaces it to aligned funders, and handles the reporting tools — so you can stay on the land, not behind a desk.",
+        "List your project in minutes, not months. Groundtrust verifies your stewardship work, surfaces it to aligned funders, and handles the reporting tools — so you can stay on the land, not behind a desk.",
       cta: "List Your Project",
       features: [
         "Simple project listing — no grant writer needed",
@@ -58,7 +58,7 @@ export default function HomePage() {
       label: "Funders",
       title: "See exactly where every dollar lands.",
       description:
-        "GiveRise gives you a verified pipeline of Indigenous and community-led conservation projects with radical transparency. No intermediaries skimming overhead. No black-box impact reports.",
+        "Groundtrust gives you a verified pipeline of Indigenous and community-led conservation projects with radical transparency. No intermediaries skimming overhead. No black-box impact reports.",
       cta: "Explore Projects",
       features: [
         "Verified, fund-ready projects surfaced to you",
@@ -72,7 +72,7 @@ export default function HomePage() {
       label: "Land Trusts",
       title: "The coordination layer you've been building manually.",
       description:
-        "You already do this work — connecting stewards to resources, managing relationships, tracking outcomes. GiveRise gives you the infrastructure to do it at ten times the scale without ten times the staff.",
+        "You already do this work — connecting stewards to resources, managing relationships, tracking outcomes. Groundtrust gives you the infrastructure to do it at ten times the scale without ten times the staff.",
       cta: "Partner With Us",
       features: [
         "Manage steward relationships at scale",
@@ -524,7 +524,7 @@ export default function HomePage() {
               {
                 step: "01",
                 title: "Surface & Verify",
-                desc: "Indigenous and community-led projects list their work in a simple, guided process. GiveRise combines community-based verification with satellite monitoring and ecological data to confirm stewardship activity — no 501(c)(3) required.",
+                desc: "Indigenous and community-led projects list their work in a simple, guided process. Groundtrust combines community-based verification with satellite monitoring and ecological data to confirm stewardship activity — no 501(c)(3) required.",
                 accent: COLORS.canopy,
               },
               {
@@ -922,7 +922,7 @@ export default function HomePage() {
                 margin: "0 auto 48px",
               }}
             >
-              GiveRise launches in 2026. Join the waitlist as a steward, funder,
+              Groundtrust launches in 2026. Join the waitlist as a steward, funder,
               or land trust partner — and help us build conservation&apos;s
               missing infrastructure.
             </p>
