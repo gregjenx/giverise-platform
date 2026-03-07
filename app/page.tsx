@@ -340,7 +340,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── GROUNDTRUST SPOTLIGHT ─── */}
+      {/* ─── FLAGSHIP PROJECTS ─── */}
       <section style={{
         padding: "120px 32px",
         background: `linear-gradient(160deg, ${C.dark} 0%, ${C.slate} 100%)`,
@@ -352,31 +352,19 @@ export default function HomePage() {
           display: "flex", alignItems: "center", justifyContent: "center",
         }}>
           <svg viewBox="0 0 1200 600" width="100%" height="100%" fill="none" stroke={C.cream} strokeLinecap="round" preserveAspectRatio="xMidYMid slice">
-            {/* Central mycelial network - organic, interconnected */}
-            {/* Primary hyphae */}
             <path d="M 100 300 Q 200 280 320 310 Q 440 340 560 300 Q 680 260 800 290 Q 920 320 1050 280 Q 1120 260 1180 270" strokeWidth="2"/>
             <path d="M 150 420 Q 280 390 380 410 Q 500 435 620 400 Q 720 370 820 395 Q 940 425 1080 390" strokeWidth="1.8"/>
             <path d="M 80 180 Q 200 200 340 175 Q 460 152 580 185 Q 700 215 840 190 Q 960 168 1100 195" strokeWidth="1.6"/>
-
-            {/* Cross connections - the coordination tissue */}
             <path d="M 320 310 Q 335 350 380 410" strokeWidth="1.2"/>
             <path d="M 560 300 Q 570 260 580 185" strokeWidth="1.2"/>
             <path d="M 800 290 Q 815 340 820 395" strokeWidth="1.2"/>
             <path d="M 340 175 Q 360 230 380 310" strokeWidth="1"/>
             <path d="M 700 215 Q 720 250 740 290" strokeWidth="1"/>
             <path d="M 940 425 Q 955 380 960 320" strokeWidth="1"/>
-
-            {/* Finer branching */}
             <path d="M 200 280 Q 180 240 170 200" strokeWidth="0.8"/>
             <path d="M 440 340 Q 460 380 475 420" strokeWidth="0.8"/>
             <path d="M 680 260 Q 660 220 650 185" strokeWidth="0.8"/>
             <path d="M 920 320 Q 940 280 950 240" strokeWidth="0.8"/>
-            <path d="M 500 435 Q 520 460 545 480" strokeWidth="0.6"/>
-            <path d="M 840 190 Q 860 160 875 130" strokeWidth="0.6"/>
-            <path d="M 280 390 Q 260 360 250 310" strokeWidth="0.7"/>
-            <path d="M 720 370 Q 700 340 695 300" strokeWidth="0.7"/>
-
-            {/* Nutrient nodes - small circles at intersections */}
             <circle cx="320" cy="310" r="4" fill={C.cream} opacity="0.4"/>
             <circle cx="560" cy="300" r="4" fill={C.cream} opacity="0.4"/>
             <circle cx="800" cy="290" r="4" fill={C.cream} opacity="0.4"/>
@@ -387,96 +375,159 @@ export default function HomePage() {
         </div>
 
         <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 2 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
-            <Reveal>
-              <div>
+          <Reveal>
+            <div style={{
+              fontFamily: "'Outfit', sans-serif", fontSize: 12, fontWeight: 700,
+              color: C.clay, letterSpacing: "0.16em", textTransform: "uppercase",
+              marginBottom: 52, display: "flex", alignItems: "center", gap: 12,
+            }}>
+              <div style={{ width: 28, height: 1.5, background: C.clay }} />
+              Flagship Projects
+            </div>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
+            {/* Card 1 — Groundtrust */}
+            <Reveal delay={100}>
+              <div style={{
+                background: "rgba(248,246,242,0.04)",
+                border: "1px solid rgba(248,246,242,0.08)",
+                borderRadius: 20, padding: "44px 40px",
+                display: "flex", flexDirection: "column", height: "100%",
+                transition: "border-color 0.3s",
+              }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(196,113,59,0.2)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(248,246,242,0.08)"; }}
+              >
                 <div style={{
-                  fontFamily: "'Outfit', sans-serif", fontSize: 12, fontWeight: 700,
-                  color: C.clay, letterSpacing: "0.16em", textTransform: "uppercase",
-                  marginBottom: 20, display: "flex", alignItems: "center", gap: 12,
+                  fontFamily: "'Outfit', sans-serif", fontSize: 12, fontWeight: 600,
+                  color: C.clay, letterSpacing: "0.1em", textTransform: "uppercase",
+                  marginBottom: 20,
                 }}>
-                  <div style={{ width: 28, height: 1.5, background: C.clay }} />
-                  Flagship Project
+                  Launching 2026
                 </div>
                 <h2 style={{
-                  fontSize: "clamp(34px, 4vw, 52px)", fontWeight: 400, lineHeight: 1.1,
-                  color: C.cream, marginBottom: 24, letterSpacing: "-0.025em",
+                  fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 400, lineHeight: 1.1,
+                  color: C.cream, marginBottom: 20, letterSpacing: "-0.025em",
                 }}>
                   Groundtrust
                 </h2>
                 <p style={{
-                  fontFamily: "'Outfit', sans-serif", fontSize: 18, lineHeight: 1.7,
-                  color: "rgba(248,246,242,0.65)", marginBottom: 20, fontWeight: 300,
+                  fontFamily: "'Outfit', sans-serif", fontSize: 16, lineHeight: 1.7,
+                  color: "rgba(248,246,242,0.65)", marginBottom: 16, fontWeight: 300,
                 }}>
                   The conservation sector&apos;s first coordination layer — connecting Indigenous and community-led land stewardship projects directly to the funders, land trusts, and institutions that want to support them.
                 </p>
                 <p style={{
-                  fontFamily: "'Outfit', sans-serif", fontSize: 16, lineHeight: 1.7,
-                  color: "rgba(248,246,242,0.5)", marginBottom: 40,
+                  fontFamily: "'Outfit', sans-serif", fontSize: 15, lineHeight: 1.7,
+                  color: "rgba(248,246,242,0.5)", marginBottom: 32,
                 }}>
                   Groundtrust verifies stewardship projects, matches them to aligned funding, and provides simple tools for reporting and relationship-building — without requiring a grant writer, a 501(c)(3), or a legal team.
                 </p>
-                <button style={{
+                <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 36, flex: 1 }}>
+                  {[
+                    { icon: "↑", title: "Surface & Verify", desc: "Community-led projects list their work. Verification through community endorsement + satellite data." },
+                    { icon: "⇄", title: "Match & Fund", desc: "Funders browse verified projects by geography, ecosystem, and need. Every dollar tracked." },
+                    { icon: "○", title: "Report & Grow", desc: "Field-first reporting tools. Photo check-ins, GPS updates, ecological indicators. No 40-page reports." },
+                  ].map((step, i) => (
+                    <div key={i} style={{
+                      background: "rgba(248,246,242,0.04)", border: "1px solid rgba(248,246,242,0.08)",
+                      borderRadius: 12, padding: "20px 24px", display: "flex", gap: 14, alignItems: "flex-start",
+                      transition: "all 0.3s",
+                    }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(248,246,242,0.07)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(196,113,59,0.2)"; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(248,246,242,0.04)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(248,246,242,0.08)"; }}
+                    >
+                      <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 18, color: C.clay, fontWeight: 600, lineHeight: 1.4, flexShrink: 0 }}>{step.icon}</span>
+                      <div>
+                        <h4 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 600, color: C.cream, marginBottom: 4 }}>{step.title}</h4>
+                        <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "rgba(248,246,242,0.5)", lineHeight: 1.6 }}>{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/groundtrust" style={{
                   fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 600,
-                  background: C.clay, color: C.cream,
-                  border: "none", borderRadius: 10, padding: "14px 32px",
-                  cursor: "pointer", transition: "all 0.3s",
-                  boxShadow: "0 4px 20px rgba(196,113,59,0.25)",
+                  color: C.clay, textDecoration: "none", transition: "color 0.3s",
+                  alignSelf: "flex-start",
                 }}
-                  onMouseEnter={e => { (e.target as HTMLButtonElement).style.background = C.amber; (e.target as HTMLButtonElement).style.transform = "translateY(-2px)"; }}
-                  onMouseLeave={e => { (e.target as HTMLButtonElement).style.background = C.clay; (e.target as HTMLButtonElement).style.transform = "translateY(0)"; }}
+                  onMouseEnter={e => (e.currentTarget.style.color = C.amber)}
+                  onMouseLeave={e => (e.currentTarget.style.color = C.clay)}
                 >
                   Learn About Groundtrust →
-                </button>
+                </Link>
               </div>
             </Reveal>
 
+            {/* Card 2 — Landocracy */}
             <Reveal delay={200}>
-              <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-                {[
-                  {
-                    icon: "↑",
-                    title: "Surface & Verify",
-                    desc: "Community-led projects list their work. Verification through community endorsement + satellite data.",
-                  },
-                  {
-                    icon: "⇄",
-                    title: "Match & Fund",
-                    desc: "Funders browse verified projects by geography, ecosystem, and need. Every dollar tracked.",
-                  },
-                  {
-                    icon: "○",
-                    title: "Report & Grow",
-                    desc: "Field-first reporting tools. Photo check-ins, GPS updates, ecological indicators. No 40-page reports.",
-                  },
-                ].map((step, i) => (
-                  <div key={i} style={{
-                    background: "rgba(248,246,242,0.04)",
-                    border: "1px solid rgba(248,246,242,0.08)",
-                    borderRadius: 14, padding: "28px 32px",
-                    transition: "all 0.3s",
-                  }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(248,246,242,0.07)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(196,113,59,0.2)"; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(248,246,242,0.04)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(248,246,242,0.08)"; }}
-                  >
-                    <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                      <span style={{
-                        fontSize: 20, color: C.clay, lineHeight: 1.4,
-                        fontFamily: "'Outfit', sans-serif", fontWeight: 600,
-                      }}>{step.icon}</span>
+              <div style={{
+                background: "rgba(248,246,242,0.04)",
+                border: "1px solid rgba(248,246,242,0.08)",
+                borderRadius: 20, padding: "44px 40px",
+                display: "flex", flexDirection: "column", height: "100%",
+                transition: "border-color 0.3s",
+              }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(196,113,59,0.2)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(248,246,242,0.08)"; }}
+              >
+                <div style={{
+                  fontFamily: "'Outfit', sans-serif", fontSize: 12, fontWeight: 600,
+                  color: C.clay, letterSpacing: "0.1em", textTransform: "uppercase",
+                  marginBottom: 20,
+                }}>
+                  Live — landocracy.org
+                </div>
+                <h2 style={{
+                  fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 400, lineHeight: 1.1,
+                  color: C.cream, marginBottom: 20, letterSpacing: "-0.025em",
+                }}>
+                  Landocracy
+                </h2>
+                <p style={{
+                  fontFamily: "'Outfit', sans-serif", fontSize: 16, lineHeight: 1.7,
+                  color: "rgba(248,246,242,0.65)", marginBottom: 16, fontWeight: 300,
+                }}>
+                  Conservation&apos;s first public census — a permanent, geographic record of who cares about the land and why.
+                </p>
+                <p style={{
+                  fontFamily: "'Outfit', sans-serif", fontSize: 15, lineHeight: 1.7,
+                  color: "rgba(248,246,242,0.5)", marginBottom: 32,
+                }}>
+                  Landocracy connects public sentiment to legislative action. Registered voices are tied to specific districts and available to legislators, land trusts, and conservation funders as documented public mandate — not a petition, not a fundraising campaign. A hunter and a wilderness purist on the same record.
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 36, flex: 1 }}>
+                  {[
+                    { icon: "●", title: "Public census, not a petition", desc: "A permanent, structured record of conservation concern — issue-agnostic, nonpartisan, and growing." },
+                    { icon: "↗", title: "Geographic precision — tied to legislative districts", desc: "Every registered voice is geocoded to state house, state senate, and congressional district." },
+                    { icon: "○", title: "Radically impartial — every reason to care counts", desc: "Hunters, hikers, ranchers, and wilderness advocates on the same record. No wrong reasons." },
+                  ].map((step, i) => (
+                    <div key={i} style={{
+                      background: "rgba(248,246,242,0.04)", border: "1px solid rgba(248,246,242,0.08)",
+                      borderRadius: 12, padding: "20px 24px", display: "flex", gap: 14, alignItems: "flex-start",
+                      transition: "all 0.3s",
+                    }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(248,246,242,0.07)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(196,113,59,0.2)"; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(248,246,242,0.04)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(248,246,242,0.08)"; }}
+                    >
+                      <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 18, color: C.clay, fontWeight: 600, lineHeight: 1.4, flexShrink: 0 }}>{step.icon}</span>
                       <div>
-                        <h4 style={{
-                          fontFamily: "'Outfit', sans-serif", fontSize: 17, fontWeight: 600,
-                          color: C.cream, marginBottom: 6,
-                        }}>{step.title}</h4>
-                        <p style={{
-                          fontFamily: "'Outfit', sans-serif", fontSize: 14,
-                          color: "rgba(248,246,242,0.55)", lineHeight: 1.6,
-                        }}>{step.desc}</p>
+                        <h4 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 600, color: C.cream, marginBottom: 4 }}>{step.title}</h4>
+                        <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "rgba(248,246,242,0.5)", lineHeight: 1.6 }}>{step.desc}</p>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+                <a href="https://landocracy.org" target="_blank" rel="noopener noreferrer" style={{
+                  fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 600,
+                  color: C.clay, textDecoration: "none", transition: "color 0.3s",
+                  alignSelf: "flex-start",
+                }}
+                  onMouseEnter={e => (e.currentTarget.style.color = C.amber)}
+                  onMouseLeave={e => (e.currentTarget.style.color = C.clay)}
+                >
+                  Visit Landocracy →
+                </a>
               </div>
             </Reveal>
           </div>

@@ -13,8 +13,8 @@ const C = {
 
 const navLinks = [
   { href: "/services", label: "Services" },
-  { href: "/groundtrust", label: "Groundtrust" },
-  { href: "/patterns", label: "Patterns" },
+  { href: "/projects", label: "Projects" },
+  { href: "/patterns", label: "Patterns at Scale" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
