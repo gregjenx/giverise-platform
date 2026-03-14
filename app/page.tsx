@@ -162,17 +162,6 @@ export default function HomePage() {
                 >
                   Start a Conversation
                 </Link>
-                <button style={{
-                  fontFamily: "'Outfit', sans-serif", fontSize: 16, fontWeight: 500,
-                  background: "transparent", color: C.charcoal,
-                  border: `1.5px solid rgba(28,31,30,0.15)`, borderRadius: 10, padding: "16px 36px",
-                  cursor: "pointer", transition: "all 0.3s",
-                }}
-                  onMouseEnter={e => { (e.target as HTMLButtonElement).style.borderColor = "rgba(28,31,30,0.35)"; }}
-                  onMouseLeave={e => { (e.target as HTMLButtonElement).style.borderColor = "rgba(28,31,30,0.15)"; }}
-                >
-                  See Our Work
-                </button>
               </div>
             </Reveal>
           </div>
@@ -739,7 +728,8 @@ export default function HomePage() {
           <div style={{ display: "flex", gap: 28 }}>
             {[
               { label: "Services", href: "/services" },
-              { label: "Groundtrust", href: "/groundtrust" },
+              { label: "Projects", href: "/projects" },
+              { label: "Patterns at Scale", href: "/patterns" },
               { label: "About", href: "/about" },
               { label: "Contact", href: "/contact" },
             ].map((link) => (
