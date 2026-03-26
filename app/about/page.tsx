@@ -103,6 +103,12 @@ const ecosystem = [
 export default function AboutPage() {
   return (
     <div style={{ background: C.cream, minHeight: "100vh" }}>
+      <style>{`
+        @media (max-width: 767px) {
+          .ab-values-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .ab-founder-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+        }
+      `}</style>
       <SiteNav />
 
       {/* Hero */}
@@ -251,6 +257,7 @@ export default function AboutPage() {
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i * 80}>
                 <div
+                  className="ab-values-grid"
                   style={{
                     padding: "40px 0",
                     borderTop: `1px solid rgba(28,31,30,0.08)`,
@@ -453,6 +460,7 @@ export default function AboutPage() {
           {/* Founder */}
           <Reveal>
             <div
+              className="ab-founder-grid"
               style={{
                 borderTop: `1px solid rgba(28,31,30,0.08)`,
                 paddingTop: 48,

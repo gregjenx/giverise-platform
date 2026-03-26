@@ -51,6 +51,7 @@ function ServiceCard({ number, title, desc, items }: {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="gr-service-card"
       style={{
         padding: "44px 40px",
         borderBottom: `1px solid rgba(28,31,30,0.08)`,
@@ -96,6 +97,22 @@ export default function HomePage() {
       fontFamily: "'Instrument Serif', Georgia, serif",
       overflowX: "hidden",
     }}>
+      <style>{`
+        @media (max-width: 767px) {
+          .gr-thesis-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+          .gr-service-card { grid-template-columns: 1fr !important; padding: 28px 20px !important; gap: 16px !important; }
+          .gr-projects-grid { grid-template-columns: 1fr !important; }
+          .gr-project-card { padding: 28px 20px !important; }
+          .gr-approach-grid { grid-template-columns: 1fr !important; }
+          .gr-approach-card { padding: 28px 20px !important; }
+          .gr-audience-grid { grid-template-columns: 1fr 1fr !important; }
+          .gr-audience-card { padding: 28px 20px !important; }
+          .gr-footer-links { flex-wrap: wrap !important; gap: 16px !important; }
+        }
+        @media (max-width: 480px) {
+          .gr-audience-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       <SiteNav />
 
       {/* ─── HERO ─── */}
@@ -226,7 +243,7 @@ export default function HomePage() {
       <section style={{ padding: "100px 32px", background: C.sand }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <Reveal>
-            <div style={{
+            <div className="gr-thesis-grid" style={{
               display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 48,
             }}>
               {[
@@ -375,10 +392,10 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
+          <div className="gr-projects-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
             {/* Card 1 — Groundtrust */}
             <Reveal delay={100}>
-              <div style={{
+              <div className="gr-project-card" style={{
                 background: "rgba(248,246,242,0.04)",
                 border: "1px solid rgba(248,246,242,0.08)",
                 borderRadius: 20, padding: "44px 40px",
@@ -450,7 +467,7 @@ export default function HomePage() {
 
             {/* Card 2 — Landocracy */}
             <Reveal delay={200}>
-              <div style={{
+              <div className="gr-project-card" style={{
                 background: "rgba(248,246,242,0.04)",
                 border: "1px solid rgba(248,246,242,0.08)",
                 borderRadius: 20, padding: "44px 40px",
@@ -545,7 +562,7 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <div style={{
+          <div className="gr-approach-grid" style={{
             display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32,
           }}>
             {[
@@ -563,7 +580,7 @@ export default function HomePage() {
               },
             ].map((principle, i) => (
               <Reveal key={i} delay={i * 120}>
-                <div style={{
+                <div className="gr-approach-card" style={{
                   padding: "40px 36px",
                   borderTop: `3px solid ${i === 0 ? C.clay : i === 1 ? C.forest : C.charcoal}`,
                   background: C.warm,
@@ -600,7 +617,7 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <div style={{
+          <div className="gr-audience-grid" style={{
             display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24,
           }}>
             {[
@@ -610,7 +627,7 @@ export default function HomePage() {
               { title: "Policy & Advocacy", desc: "Organizations shaping conservation legislation, land use policy, and public funding." },
             ].map((aud, i) => (
               <Reveal key={i} delay={i * 100}>
-                <div style={{
+                <div className="gr-audience-card" style={{
                   padding: "36px 28px",
                   background: C.cream,
                   borderRadius: 12,
@@ -725,7 +742,7 @@ export default function HomePage() {
               Technology infrastructure for land conservation.
             </p>
           </div>
-          <div style={{ display: "flex", gap: 28 }}>
+          <div className="gr-footer-links" style={{ display: "flex", gap: 28 }}>
             {[
               { label: "Services", href: "/services" },
               { label: "Projects", href: "/projects" },

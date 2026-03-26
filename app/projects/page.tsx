@@ -43,6 +43,12 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 export default function ProjectsPage() {
   return (
     <div style={{ background: C.cream, minHeight: "100vh" }}>
+      <style>{`
+        @media (max-width: 767px) {
+          .pj-card { padding: 28px 20px !important; }
+          .pj-card-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+      `}</style>
       <SiteNav />
 
       {/* ─── HERO ─── */}
@@ -106,7 +112,7 @@ export default function ProjectsPage() {
 
             {/* ── Block 1 — Groundtrust ── */}
             <Reveal>
-              <div style={{
+              <div className="pj-card" style={{
                 background: "rgba(248,246,242,0.04)",
                 border: "1px solid rgba(248,246,242,0.08)",
                 borderRadius: 24, padding: "56px 60px",
@@ -115,7 +121,7 @@ export default function ProjectsPage() {
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(196,113,59,0.2)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(248,246,242,0.08)"; }}
               >
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }}>
+                <div className="pj-card-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }}>
                   <div>
                     <div style={{
                       fontFamily: "'Outfit', sans-serif", fontSize: 11, fontWeight: 700,
@@ -212,7 +218,7 @@ export default function ProjectsPage() {
 
             {/* ── Block 2 — Landocracy ── */}
             <Reveal delay={100}>
-              <div style={{
+              <div className="pj-card" style={{
                 background: "rgba(248,246,242,0.04)",
                 border: "1px solid rgba(248,246,242,0.08)",
                 borderRadius: 24, padding: "56px 60px",
@@ -221,7 +227,7 @@ export default function ProjectsPage() {
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(196,113,59,0.2)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(248,246,242,0.08)"; }}
               >
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }}>
+                <div className="pj-card-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }}>
                   <div>
                     <div style={{
                       fontFamily: "'Outfit', sans-serif", fontSize: 11, fontWeight: 700,

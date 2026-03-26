@@ -84,6 +84,14 @@ export default function HomePage() {
   ];
 
   return (
+    <>
+    <style>{`
+      @media (max-width: 767px) {
+        .gt-audience-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+        .gt-compare-card { padding: 32px 20px !important; }
+        .gt-compare-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+      }
+    `}</style>
     <div
       style={{
         background: COLORS.bone,
@@ -666,6 +674,7 @@ export default function HomePage() {
           </Reveal>
 
           <div
+            className="gt-audience-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
@@ -780,6 +789,7 @@ export default function HomePage() {
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Reveal>
             <div
+              className="gt-compare-card"
               style={{
                 background: `linear-gradient(135deg, rgba(45,74,62,0.05), rgba(196,113,59,0.05))`,
                 borderRadius: 24,
@@ -806,6 +816,7 @@ export default function HomePage() {
                 .
               </h2>
               <div
+                className="gt-compare-grid"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -1088,5 +1099,6 @@ export default function HomePage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

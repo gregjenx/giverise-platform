@@ -123,6 +123,12 @@ export default function ContactPage() {
 
   return (
     <div style={{ background: C.cream, minHeight: "100vh" }}>
+      <style>{`
+        @media (max-width: 767px) {
+          .ct-layout { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .ct-name-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       <SiteNav />
 
       {/* Hero */}
@@ -192,6 +198,7 @@ export default function ContactPage() {
       {/* Two-column: form + contact info */}
       <section style={{ padding: "80px 32px 100px" }}>
         <div
+          className="ct-layout"
           style={{
             maxWidth: 1100,
             margin: "0 auto",
@@ -242,6 +249,7 @@ export default function ContactPage() {
                 style={{ display: "flex", flexDirection: "column", gap: 24 }}
               >
                 <div
+                  className="ct-name-grid"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",

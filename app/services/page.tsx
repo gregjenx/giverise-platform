@@ -212,6 +212,16 @@ export default function ServicesPage() {
       fontFamily: "'Instrument Serif', Georgia, serif",
       overflowX: "hidden",
     }}>
+      <style>{`
+        @media (max-width: 767px) {
+          .sv-index-grid { grid-template-columns: 1fr 1fr !important; }
+          .sv-header-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .sv-detail-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+        @media (max-width: 480px) {
+          .sv-index-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       <SiteNav />
 
       {/* ─── HERO ─── */}
@@ -265,7 +275,7 @@ export default function ServicesPage() {
       {/* ─── SERVICE INDEX ─── */}
       <section style={{ padding: "0 32px", background: C.sand, borderBottom: `1px solid rgba(28,31,30,0.07)` }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{
+          <div className="sv-index-grid" style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
             borderLeft: `1px solid rgba(28,31,30,0.07)`,
@@ -319,7 +329,7 @@ export default function ServicesPage() {
 
             {/* Section header */}
             <Reveal>
-              <div style={{
+              <div className="sv-header-grid" style={{
                 display: "grid",
                 gridTemplateColumns: "80px 1fr",
                 gap: 40,
@@ -363,7 +373,7 @@ export default function ServicesPage() {
             </Reveal>
 
             {/* Three-column detail grid */}
-            <div style={{
+            <div className="sv-detail-grid" style={{
               display: "grid",
               gridTemplateColumns: "1.6fr 1fr 1fr",
               gap: 40,
