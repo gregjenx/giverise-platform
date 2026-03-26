@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { COLORS } from "@/lib/colors";
 
@@ -175,74 +175,123 @@ export default function Nav() {
             background: "transparent",
             border: "none",
             cursor: "pointer",
-            color: scrolled ? "#2d4a3e" : COLORS.cream,
             padding: 8,
-            transition: "color 0.4s",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: 0,
+            width: 36,
+            height: 36,
           }}
           aria-label="Toggle mobile menu"
         >
-          {mobileOpen ? (
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M3 12h18M3 6h18M3 18h16" />
-            </svg>
-          )}
+          <span
+            style={{
+              display: "block",
+              width: 22,
+              height: 2,
+              borderRadius: 1,
+              background: scrolled ? "#2d4a3e" : COLORS.cream,
+              transition: "all 0.3s ease",
+              transform: mobileOpen ? "translateY(7px) rotate(45deg)" : "none",
+            }}
+          />
+          <span
+            style={{
+              display: "block",
+              width: 22,
+              height: 2,
+              borderRadius: 1,
+              background: scrolled ? "#2d4a3e" : COLORS.cream,
+              transition: "all 0.3s ease",
+              marginTop: 5,
+              opacity: mobileOpen ? 0 : 1,
+            }}
+          />
+          <span
+            style={{
+              display: "block",
+              width: 22,
+              height: 2,
+              borderRadius: 1,
+              background: scrolled ? "#2d4a3e" : COLORS.cream,
+              transition: "all 0.3s ease",
+              marginTop: 5,
+              transform: mobileOpen ? "translateY(-7px) rotate(-45deg)" : "none",
+            }}
+          />
         </button>
       </div>
 
+      {/* Mobile backdrop — closes menu on outside tap */}
+      <div
+        className="md:hidden"
+        onClick={() => setMobileOpen(false)}
+        style={{
+          position: "fixed",
+          inset: 0,
+          top: 0,
+          zIndex: -1,
+          opacity: mobileOpen ? 1 : 0,
+          pointerEvents: mobileOpen ? "auto" : "none",
+          transition: "opacity 0.3s ease",
+        }}
+      />
+
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div
-          style={{
-            background: scrolled ? "rgba(250,247,242,0.98)" : COLORS.deep,
-            borderTop: `1px solid ${scrolled ? "rgba(45,74,62,0.1)" : "rgba(196,113,59,0.15)"}`,
-            padding: "20px 24px 28px",
-          }}
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              style={{
-                display: "block",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-                fontSize: 16,
-                fontWeight: 500,
-                color: scrolled ? "#2d4a3e" : COLORS.cream,
-                textDecoration: "none",
-                padding: "14px 0",
-                borderBottom: `1px solid ${scrolled ? "rgba(45,74,62,0.08)" : "rgba(245,240,232,0.06)"}`,
-              }}
-            >
-              {link.label}
-            </Link>
-          ))}
+      <div
+        className="md:hidden"
+        style={{
+          background: scrolled ? "rgba(250,247,242,0.98)" : COLORS.deep,
+          borderTop: `1px solid ${scrolled ? "rgba(45,74,62,0.1)" : "rgba(196,113,59,0.15)"}`,
+          padding: mobileOpen ? "20px 24px 28px" : "0 24px",
+          maxHeight: mobileOpen ? 500 : 0,
+          opacity: mobileOpen ? 1 : 0,
+          transform: mobileOpen ? "translateY(0)" : "translateY(-8px)",
+          overflow: "hidden",
+          transition: "max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease, padding 0.3s ease",
+        }}
+      >
+        {navLinks.map((link) => (
           <Link
-            href="/groundtrust#waitlist"
+            key={link.href}
+            href={link.href}
             onClick={() => setMobileOpen(false)}
             style={{
               display: "block",
-              marginTop: 20,
-              width: "100%",
               fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
               fontSize: 16,
-              fontWeight: 600,
-              background: COLORS.clay,
-              color: COLORS.bone,
-              borderRadius: 8,
-              padding: "14px 22px",
+              fontWeight: 500,
+              color: scrolled ? "#2d4a3e" : COLORS.cream,
               textDecoration: "none",
-              textAlign: "center",
+              padding: "14px 0",
+              borderBottom: `1px solid ${scrolled ? "rgba(45,74,62,0.08)" : "rgba(245,240,232,0.06)"}`,
             }}
           >
-            Join the Waitlist
+            {link.label}
           </Link>
-        </div>
-      )}
+        ))}
+        <Link
+          href="/groundtrust#waitlist"
+          onClick={() => setMobileOpen(false)}
+          style={{
+            display: "block",
+            marginTop: 20,
+            width: "100%",
+            fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+            fontSize: 16,
+            fontWeight: 600,
+            background: COLORS.clay,
+            color: COLORS.bone,
+            borderRadius: 8,
+            padding: "14px 22px",
+            textDecoration: "none",
+            textAlign: "center" as const,
+          }}
+        >
+          Join the Waitlist
+        </Link>
+      </div>
     </header>
   );
 }
