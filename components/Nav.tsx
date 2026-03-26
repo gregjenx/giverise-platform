@@ -113,7 +113,7 @@ export default function Nav() {
 
         {/* Desktop nav */}
         <nav
-          style={{ display: "flex", gap: 28, alignItems: "center" }}
+          style={{ gap: 28, alignItems: "center" }}
           className="hidden md:flex"
         >
           {navLinks.map((link) => (
