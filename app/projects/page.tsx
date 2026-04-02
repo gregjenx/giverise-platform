@@ -110,7 +110,7 @@ export default function ProjectsPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 2, paddingTop: 80 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 48 }}>
 
-            {/* ── Block 1 — Groundtrust ── */}
+            {/* ── Block 1 — Myceli ── */}
             <Reveal>
               <div className="pj-card" style={{
                 background: "rgba(248,246,242,0.04)",
@@ -142,7 +142,7 @@ export default function ProjectsPage() {
                       fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 400, lineHeight: 1.1,
                       color: C.cream, letterSpacing: "-0.025em", marginBottom: 16,
                     }}>
-                      Groundtrust
+                      Myceli.org
                     </h2>
                     <p style={{
                       fontFamily: "'Outfit', sans-serif", fontSize: 17, fontStyle: "italic",
@@ -155,16 +155,16 @@ export default function ProjectsPage() {
                       fontFamily: "'Outfit', sans-serif", fontSize: 16, fontWeight: 300,
                       lineHeight: 1.75, color: "rgba(248,246,242,0.65)", marginBottom: 16,
                     }}>
-                      Groundtrust connects Indigenous and community-led land stewardship projects directly to the funders who want to support them — with radical transparency, zero bureaucratic overhead, and tools built for the field. No grant writer, no 501(c)(3), no legal team required.
+                      Myceli connects Indigenous and community-led land stewardship projects directly to the funders who want to support them — with radical transparency, zero bureaucratic overhead, and tools built for the field. No grant writer, no 501(c)(3), no legal team required.
                     </p>
                     <p style={{
                       fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 300,
                       lineHeight: 1.75, color: "rgba(248,246,242,0.45)", marginBottom: 40,
                     }}>
-                      Conservation has a routing problem, not a funding problem. Billions flow into land conservation every year. But the communities doing the most effective stewardship see almost none of it. Groundtrust is the connective tissue between them.
+                      Conservation has a routing problem, not a funding problem. Billions flow into land conservation every year. But the communities doing the most effective stewardship see almost none of it. Myceli is the connective tissue between them.
                     </p>
                     <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                      <Link href="/groundtrust" style={{
+                      <a href="https://myceli.org" target="_blank" rel="noreferrer" style={{
                         fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 600,
                         background: C.clay, color: C.cream, borderRadius: 10,
                         padding: "13px 28px", textDecoration: "none", display: "inline-block",
@@ -174,8 +174,8 @@ export default function ProjectsPage() {
                         onMouseLeave={e => { e.currentTarget.style.background = C.clay; e.currentTarget.style.transform = "translateY(0)"; }}
                       >
                         Learn More →
-                      </Link>
-                      <Link href="/groundtrust#waitlist" style={{
+                      </a>
+                      <a href="https://myceli.org/#waitlist" target="_blank" rel="noreferrer" style={{
                         fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 500,
                         color: "rgba(248,246,242,0.6)", textDecoration: "none",
                         border: "1px solid rgba(248,246,242,0.15)", borderRadius: 10,
@@ -185,7 +185,7 @@ export default function ProjectsPage() {
                         onMouseLeave={e => { e.currentTarget.style.color = "rgba(248,246,242,0.6)"; e.currentTarget.style.borderColor = "rgba(248,246,242,0.15)"; }}
                       >
                         Join the Waitlist
-                      </Link>
+                      </a>
                     </div>
                   </div>
 
@@ -352,7 +352,7 @@ export default function ProjectsPage() {
               fontFamily: "'Outfit', sans-serif", fontSize: 18, lineHeight: 1.7,
               color: "rgba(248,246,242,0.55)", marginBottom: 48, fontWeight: 300,
             }}>
-              Groundtrust routes conservation capital to the communities doing the work. Landocracy documents the public mandate that makes that work matter. Together they&apos;re the infrastructure layer the conservation sector has been missing.
+              Myceli routes conservation capital to the communities doing the work. Landocracy documents the public mandate that makes that work matter. Together they&apos;re the infrastructure layer the conservation sector has been missing.
             </p>
           </Reveal>
           <Reveal delay={240}>

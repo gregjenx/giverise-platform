@@ -393,7 +393,7 @@ export default function HomePage() {
           </Reveal>
 
           <div className="gr-projects-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
-            {/* Card 1 — Groundtrust */}
+            {/* Card 1 — Myceli */}
             <Reveal delay={100}>
               <div className="gr-project-card" style={{
                 background: "rgba(248,246,242,0.04)",
@@ -416,7 +416,7 @@ export default function HomePage() {
                   fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 400, lineHeight: 1.1,
                   color: C.cream, marginBottom: 20, letterSpacing: "-0.025em",
                 }}>
-                  Groundtrust
+                  Myceli.org
                 </h2>
                 <p style={{
                   fontFamily: "'Outfit', sans-serif", fontSize: 16, lineHeight: 1.7,
@@ -428,7 +428,7 @@ export default function HomePage() {
                   fontFamily: "'Outfit', sans-serif", fontSize: 15, lineHeight: 1.7,
                   color: "rgba(248,246,242,0.5)", marginBottom: 32,
                 }}>
-                  Groundtrust verifies stewardship projects, matches them to aligned funding, and provides simple tools for reporting and relationship-building — without requiring a grant writer, a 501(c)(3), or a legal team.
+                  Myceli verifies stewardship projects, matches them to aligned funding, and provides simple tools for reporting and relationship-building — without requiring a grant writer, a 501(c)(3), or a legal team.
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 36, flex: 1 }}>
                   {[
@@ -452,7 +452,7 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-                <Link href="/groundtrust" style={{
+                <a href="https://myceli.org" target="_blank" rel="noreferrer" style={{
                   fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 600,
                   color: C.clay, textDecoration: "none", transition: "color 0.3s",
                   alignSelf: "flex-start",
@@ -460,8 +460,8 @@ export default function HomePage() {
                   onMouseEnter={e => (e.currentTarget.style.color = C.amber)}
                   onMouseLeave={e => (e.currentTarget.style.color = C.clay)}
                 >
-                  Learn About Groundtrust →
-                </Link>
+                  Learn About Myceli.org →
+                </a>
               </div>
             </Reveal>
 

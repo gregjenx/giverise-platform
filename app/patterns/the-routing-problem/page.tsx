@@ -183,7 +183,7 @@ export default function TheRoutingProblemPage() {
               verification logic works in the other direction — small inputs
               aggregate toward the main channel, gaining credibility through
               connection and flow rather than institutional form. That&apos;s
-              the model Groundtrust is built on: distribution first, then
+              the model Myceli is built on: distribution first, then
               accountability, not the other way around.
             </p>
           </Reveal>

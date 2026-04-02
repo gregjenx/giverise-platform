@@ -50,7 +50,7 @@ export async function POST(req: Request) {
 
   const resend = new Resend(process.env.RESEND_API_KEY);
   await resend.emails.send({
-    from: "Groundtrust Waitlist <hello@giverise.ai>",
+    from: "Myceli Waitlist <hello@giverise.ai>",
     to: "hello@giverise.ai",
     subject: `New waitlist signup — ${roleLabel[role]}`,
     text: `Name: ${name || "—"}\nEmail: ${email}\nRole: ${roleLabel[role]}`,

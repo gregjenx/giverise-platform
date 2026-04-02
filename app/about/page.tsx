@@ -699,7 +699,7 @@ export default function AboutPage() {
           <div style={{ display: "flex", gap: 28 }}>
             {[
               { label: "Services", href: "/services" },
-              { label: "Groundtrust", href: "/groundtrust" },
+              { label: "Myceli.org", href: "https://myceli.org", external: true },
               { label: "About", href: "/about" },
               { label: "Contact", href: "/contact" },
             ].map((link) => (

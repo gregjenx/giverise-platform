@@ -60,7 +60,7 @@ export default function PatternsLayout({
             </p>
           </div>
           <div style={{ display: "flex", gap: 28 }}>
-            {["Patterns at Scale", "Services", "Groundtrust", "About"].map(
+            {["Patterns at Scale", "Services", "Myceli.org", "About"].map(
               (link) => (
                 <a
                   key={link}
